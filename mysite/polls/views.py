@@ -29,3 +29,4 @@ def addBlog(request):
     name = request.POST['name']
     description = request.POST['description']
     return render(request,'result.html',{'name':name,'description':description})
+
