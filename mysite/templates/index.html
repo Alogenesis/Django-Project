@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>ชื่อบทความ : {{ name }}</h2>
+<h2>ผู้แต่ง : {{ auther }}</h2>
+
+<h2>ป้ายกำกับ for loop</h2>
+<ul>
+    {% for tag in tags %}
+    <li>{{ tag }}</li>
+    {% endfor %}
+</ul>
+
+<h2>ความนิยม</h2>
+<p>คำหนดค่าตัวแปรไว้ที่ 3</p>
+<p>if > 3 = เป็นที่นิยมมาก</p>
+<p>else = ไม่เป็นที่นิยม</p>
+{% if rating > 3 %}
+    <h3>คำตอบ : เป็นที่นิยมมาก</h3>
+{% else %}
+    <h3>คำตอบ : ไม่เป็นที่นิยม</h3>
+{% endif %}
+
+
+{% endblock %}
