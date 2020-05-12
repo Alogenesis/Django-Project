@@ -8,3 +8,16 @@ def index(request):
 
 def hello(request):
     return HttpResponse("<h1>Hello, world. Home Page</h1>")
+
+def home_page_html(request):
+    tags = ['น้ำตก','ธรรมชาติ','ทะเล','ป่าดงดิบ']
+    rating = 3
+    return render(request,'index.html',
+    {'name':'Object ข้อมูล ที่โยนเข้าหน้าเว็บ',
+     'auther':'Winai Nob',
+     'tags':tags,
+     'rating':rating,
+     })
+
+def page1(request):
+    return render(request, 'page1.html',)
