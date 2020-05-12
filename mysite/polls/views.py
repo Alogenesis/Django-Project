@@ -27,5 +27,5 @@ def createForm(request):
 
 def addBlog(request):
     name = request.GET['name']
-    description = request.GET['description']
+    description = request.POST['description']
     return render(request,'result.html',{'name':name,'description':description})
