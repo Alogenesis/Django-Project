@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2 align="center">เขียนบทความ</h2>
+<form action="addForm" method="get">
+    <!-- ชื่อบทความ -->
+    <div class="form-group">
+        <label for="">ชื่อบทความ</label>
+        <input type="text" class="form-control" name="name">
+    </div>
+    <!-- เนื้อหาบทความ -->
+    <div class="form-group">
+        <label for="">เนื้อหาบทความ</label>
+        <input type="text" class="form-control" name="description">
+    </div>
+
+    <!-- Submit botton -->
+    <input type="submit" value="บันทึกบทความ" class="btn btn-primary">
+</form>
+
+
+
+
+
+{% endblock %}

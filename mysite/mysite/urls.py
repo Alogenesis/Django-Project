@@ -24,4 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home_page_html),
     path('page1',views.page1),
+    path('createForm',views.createForm),
+    path('addForm',views.addBlog),
 ]

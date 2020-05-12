@@ -21,3 +21,11 @@ def home_page_html(request):
 
 def page1(request):
     return render(request, 'page1.html',)
+
+def createForm(request):
+    return render(request, 'form.html',)
+
+def addBlog(request):
+    name = request.GET['name']
+    description = request.GET['description']
+    return render(request,'result.html',{'name':name,'description':description})
