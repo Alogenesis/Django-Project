@@ -23,7 +23,9 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('',views.home_page_html),
+    #path('',views.queryData),  ไม่สามารถใส่ path 2 อันในหน้าเดียวได้
     path('page1',views.page1),
     path('createForm',views.createForm),
     path('addForm',views.addBlog),
+
 ]

@@ -35,11 +35,14 @@
     </tr>
   </thead>
   <tbody>
+  {% for i in post %}
+  <!-- i คือ ตัวนับ post คือ ชื่อไฟล์ใน my sql -->
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.desc}}</td>
     </tr>
+  {% endfor %}
   </tbody>
 </table>
 
