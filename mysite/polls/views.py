@@ -23,6 +23,13 @@ def home_page_html(request):
      #Query Data
      'post':data,
      })
+#ลองสร้าง def query แต่มันใช้ไม่ได้ เลยเอาข้อมูลในนี้ไปใส่ใน ฟังก์ชั่น index page แล้ว
+def queryData(reqeust):
+    #Query Data From Model
+    data = Post.objects.all()
+    return render(reqeust,'index.html',{'post':data})
+
+
 
 def page1(request):
     return render(request, 'page1.html',)
@@ -35,8 +42,4 @@ def addBlog(request):
     description = request.POST['description']
     return render(request,'result.html',{'name':name,'description':description})
 
-#ลองสร้าง def query แต่มันใช้ไม่ได้ เลยเอาข้อมูลในนี้ไปใส่ใน ฟังก์ชั่น index page แล้ว
-def queryData(reqeust):
-    #Query Data From Model
-    data = Post.objects.all()
-    return render(reqeust,'index.html',{'post':data})
+
