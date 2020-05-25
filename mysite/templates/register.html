@@ -2,6 +2,15 @@
 
 {% block content %}
 <h2 align="center">ลงทะเบียน</h2>
+
+{% if messages %} <!--เช็คว่ามี messages มั้ย ถ้าไม่มีไม่โชว์ -->
+<div class="alert alert-danger" role="alert">   <!--Bootstrap-->
+{% for i in messages %}     <!--For message alert show-->
+    <b>{{i}}</b>
+{% endfor %}
+</div>
+{% endif %}
+
 <form action="addUser" method="post">
     {% csrf_token %}        <!-- Error when add csrf_token -->
     <!-- Username -->
