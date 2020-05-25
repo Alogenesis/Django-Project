@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from .models import Post
 from django.contrib.auth.models import User
@@ -54,12 +54,22 @@ def addUser(request):
     password = request.POST['password']
     repassword = request.POST['repassword']
 
-    User.objects.create_user(
-        username = username,
-        password = password,
-        email = email,
-        first_name = firstname,
-        last_name = lastname,
-    )
-    User.save()
-    return render(request,'addUserResult.html')
+    if password == repassword : #เช็คว่า password 2 ช่องตรงกันมั้ย ถ้าตรงไปต่อ
+        if User.objects.filter(username=username).exists(): #เช็คว่า username ซ้ำกับที่เคยลงไว้มั้ย
+            print("Username นี้มีคนใช้แล้ว")
+            return redirect('/register')
+        elif User.objects.filter(email=email).exists(): #เช็คว่า email ซ้ำมั้ย
+            print("Email นี้มีผู้ใช้งานแล้ว")
+            return redirect('/register')
+        else:   #ถ้าไม่ซ้ำ ให้ทำการบันทึกข้อมูล
+            User.objects.create_user(
+            username = username,
+            password = password,
+            email = email,
+            first_name = firstname,
+            last_name = lastname,
+            )
+            User.save()
+            return redirect('/')
+    else:   #password ไม่ตรงกัน ลงทะเบียนใหม่
+        return redirect('/register')
