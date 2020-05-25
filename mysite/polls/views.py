@@ -77,3 +77,7 @@ def addUser(request):
     else:   #password ไม่ตรงกัน ลงทะเบียนใหม่
         messages.info(request, 'Password ไม่ตรงกัน')
         return redirect('/register')
+
+#Login
+def login(request):
+    return render(request,'login.html')

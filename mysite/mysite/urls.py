@@ -33,5 +33,8 @@ urlpatterns = [
     #path หน้า addregister ให้เก็บข้อมูล
     path('addUser',views.addUser),
 
+    #path หน้า login
+    path('login',views.login),
+
 
 ]
