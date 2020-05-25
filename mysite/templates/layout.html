@@ -33,7 +33,7 @@
 
             {% if user.is_authenticated %} <!--ถ้าล็อกอินอยู่-->
             <a class="dropdown-item" href="#">Hello! {{user.first_name}}</a>
-            <a class="dropdown-item" href="#">Log out</a>
+            <a class="dropdown-item" href="/logout">Log out</a>
 
             {% else %} <!--ถ้ายังไม่ล็อกอิน-->
           <a class="dropdown-item" href="http://127.0.0.1:8000/register">ลงทะเบียน</a>

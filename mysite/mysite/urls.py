@@ -38,5 +38,8 @@ urlpatterns = [
     #path login_success
     path('login_success',views.login_success),
 
+    #path Log Out
+    path('logout',views.logout),
+
 
 ]

@@ -96,3 +96,8 @@ def login_success(request):
     else:   #ถ้า user เป็นว่าง คือ ไม่พบข้อมูลผู้ใช้
         messages.info(request, 'ไม่พบข้อมูลผู้ใช้ หรือ รหัสผ่านผิด')
         return redirect('/login')
+
+#Log Out
+def logout():
+    auth.logout(request)
+    return redirect('/')
