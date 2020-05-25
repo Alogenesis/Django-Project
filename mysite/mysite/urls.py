@@ -35,6 +35,8 @@ urlpatterns = [
 
     #path หน้า login
     path('login',views.login),
+    #path login_success
+    path('login_success',views.login_success),
 
 
 ]
