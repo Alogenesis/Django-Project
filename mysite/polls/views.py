@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -42,4 +43,23 @@ def addBlog(request):
     description = request.POST['description']
     return render(request,'result.html',{'name':name,'description':description})
 
+def createRegister(request):
+    return render(request, 'register.html', )
 
+def addUser(request):
+    username = request.POST['username']
+    firstname = request.POST['firstname']
+    lastname = request.POST['lastname']
+    email = request.POST['email']
+    password = request.POST['password']
+    repassword = request.POST['repassword']
+
+    User.objects.create_user(
+        username = username,
+        password = password,
+        email = email,
+        first_name = firstname,
+        last_name = lastname,
+    )
+    User.save()
+    return render(request,'addUserResult.html')

@@ -28,4 +28,10 @@ urlpatterns = [
     path('createForm',views.createForm),
     path('addForm',views.addBlog),
 
+    #path หน้า register
+    path('register',views.createRegister),
+    #path หน้า addregister ให้เก็บข้อมูล
+    path('addUser',views.addUser),
+
+
 ]
